@@ -7,12 +7,12 @@
 class Solution:
     def reorderList(self, head: Optional[ListNode]) -> None:
         if not head or not head.next:
-            return 
+            return
 
         slow = head
         fast = head
 
-        while fast.next and fast.next.next:
+        while fast and fast.next:
             slow = slow.next
             fast = fast.next.next
 
@@ -34,3 +34,4 @@ class Solution:
             second.next = tmp1
             first = tmp1
             second = tmp2
+        
